@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ Sécurité ═══ -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' https://cdn.jsdelivr.net;
+    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' https://img.youtube.com data:;
+    frame-src https://www.youtube.com;
+    connect-src 'self' https://api.emailjs.com;
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+  ">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <meta name="description" content="InHabit, plateforme de lancement du livre et portfolio architectural de Warren Riad AYITOU.">
+  <meta name="keywords" content="InHabit, architecture, livre, portfolio, Warren Riad AYITOU, design, auteur">
+  <meta name="author" content="Warren Riad AYITOU">
+  <meta name="theme-color" content="#1c1712">
+  <meta property="og:title" content="InHabit - Warren Riad AYITOU">
+  <meta property="og:description" content="Architecture, livre, pensée spatiale et portfolio premium.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="concept-fr.jpeg">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="InHabit - Warren Riad AYITOU">
+  <meta name="twitter:description" content="Architecture, livre, pensée spatiale et portfolio premium.">
+  <meta name="twitter:image" content="concept-fr.jpeg">
+  <title>InHabit - Warren Riad AYITOU</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Warren Riad AYITOU",
+    "jobTitle": "Architect & Author",
+    "url": "https://inhabit-studio.example",
+    "sameAs": [
+      "https://www.youtube.com/@InHabit_Archi"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "InHabit: Questioning Space",
+    "author": {
+      "@type": "Person",
+      "name": "Warren Riad AYITOU"
+    },
+    "numberOfPages": "240",
+    "inLanguage": ["en", "fr"],
+    "datePublished": "2026-06-08"
+  }
+  </script>
+</head>
+<body>
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <span class="preloader-mark">I<span>n</span>Habit</span>
+    <div class="preloader-bar"><span></span></div>
+  </div>
+
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+
+  <div class="cursor-dot is-hidden" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring is-hidden" id="cursorRing" aria-hidden="true"></div>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" aria-label="Navigation principale">
+    <a class="brand" href="#home" aria-label="Retour a l'accueil">
+      <span class="brand-mark">I</span>nHabit
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="main-nav" aria-label="Menu">
+      <a href="#home" data-i18n="nav_home"><span>01</span> Home</a>
+      <a href="#book" data-i18n="nav_books"><span>02</span> Books</a>
+      <a href="#youtube" data-i18n="nav_youtube"><span>03</span> YouTube</a>
+      <a href="#portfolio" data-i18n="nav_portfolio"><span>04</span> Portfolio</a>
+      <a href="#about" data-i18n="nav_about"><span>05</span> About</a>
+      <a href="#contact" data-i18n="nav_contact"><span>06</span> Contact</a>
+      <button class="lang-toggle" type="button" aria-label="Changer la langue">
+        <span class="lang-label">FR</span>
+      </button>
+      <button class="theme-toggle" type="button" aria-label="Basculer le mode sombre">
+        <svg class="theme-icon theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-icon theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section-reveal">
+      <div class="hero-blueprint" aria-hidden="true"></div>
+      <div class="hero-arch-frame" aria-hidden="true">
+      </div>
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            InHabit — 2026
+          </div>
+          <p class="eyebrow" data-i18n="hero_eyebrow">Architecture / Publishing / Thought</p>
+          <h1>
+            <span class="hero-line" data-i18n="hero_h1_0">In questioning</span>
+            <span class="hero-line hero-line-accent" data-i18n="hero_h1_1">space,</span>
+            <span class="hero-line" data-i18n="hero_h1_2">we redefine habit.</span>
+          </h1>
+          <p class="hero-author">Warren Riad <em>AYITOU</em></p>
+          <p class="hero-subtitle" data-i18n="hero_subtitle">Architect &bull; Author</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#book" data-i18n="hero_btn1">
+              Discover The Book
+            </a>
+            <a class="button ghost" href="#portfolio" data-i18n="hero_btn2">View Portfolio</a>
+          </div>
+        </div>
+        <div class="hero-gallery" aria-label="Composition architecturale">
+          <figure class="hero-img hero-img-main">
+            <img src="hero-main.jpg" alt="Architecture végétalisée et biophilique sur colline" loading="eager">
+            <figcaption>01 — Light &amp; Volume</figcaption>
+          </figure>
+          <figure class="hero-img hero-img-secondary">
+            <img src="hero-secondary.jpg" alt="Villa contemporaine avec reflet dans l'eau au coucher du soleil" loading="eager">
+            <figcaption>02 — Material</figcaption>
+          </figure>
+          <figure class="hero-img hero-img-tertiary">
+            <img src="hero-tertiary.png" alt="Concept" loading="eager">
+            <figcaption>03 — Concept</figcaption>
+          </figure>
+          <div class="hero-gallery-grid" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="hero-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Spatial Thinking</span><span>◆</span>
+          <span>Material Silence</span><span>◆</span>
+          <span>Human Scale</span><span>◆</span>
+          <span>Questioning Space</span><span>◆</span>
+          <span>InHabit</span><span>◆</span>
+          <span>Spatial Thinking</span><span>◆</span>
+          <span>Material Silence</span><span>◆</span>
+          <span>Human Scale</span><span>◆</span>
+          <span>Questioning Space</span><span>◆</span>
+          <span>InHabit</span><span>◆</span>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#book" aria-label="Aller au livre">
+        <span class="scroll-line"></span>
+        <span data-i18n="hero_scroll">Scroll</span>
+      </a>
+    </section>
+
+    <section id="book" class="book-launch section-reveal">
+      <div class="book-blueprint-bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="book-header">
+          <div class="book-header-label">
+            <p class="eyebrow" data-i18n="book_eyebrow">CONCEPT : The creation of concept in architecture</p>
+            <span class="section-num">01</span>
+          </div>
+          <div class="book-header-copy">
+            <h2 data-i18n="book_h2">InHabit: Questioning Space</h2>
+            <p class="lead" data-i18n="book_lead">A premium architectural essay on space, identity and the rituals of dwelling.</p>
+          </div>
+        </header>
+
+        <div class="book-showcase">
+          <div class="book-editorial">
+            <p class="kicker" data-i18n="book_kicker">Volume I — InHabit Studio Press</p>
+            <blockquote class="book-pullquote" data-i18n="book_pullquote">
+              « Architecture is not what we build. It is what we become through building. »
+            </blockquote>
+            <p class="lead" data-i18n="book_lead2">
+              A cinematic and intimate exploration of architecture as a living dialogue between place,
+              memory, body and transformation — written for designers, students, thinkers and readers
+              who believe that space shapes the way we become.
+            </p>
+            <ul class="book-chapters">
+              <li><span>I</span> <span data-i18n="book_ch1">Introduction</span></li>
+              <li><span>II</span> <span data-i18n="book_ch2">Inspiration &amp; références</span></li>
+              <li><span>III</span> <span data-i18n="book_ch3">The design process</span></li>
+              <li><span>IV</span> <span data-i18n="book_ch4">Guided &amp; miniproject</span></li>
+              <li><span>V</span> <span data-i18n="book_ch5">Interview series</span></li>
+              <li><span>VI</span> <span data-i18n="book_ch6">Commented case studies</span></li>
+            </ul>
+            <div class="split-actions">
+              <a class="button bronze" href="#preorder">
+                <span data-i18n="book_btn1">Pre-Order</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a class="button ghost" href="#preview" data-i18n="book_btn2">Read Sample Pages</a>
+            </div>
+          </div>
+
+          <div class="book-visual" aria-label="Couvertures du livre InHabit">
+            <div class="book-plan" aria-hidden="true">
+              <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="40" y="40" width="320" height="320" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                <line x1="40" y1="200" x2="360" y2="200" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+                <line x1="200" y1="40" x2="200" y2="360" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+                <circle cx="200" cy="200" r="80" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+                <path d="M120 280 L200 120 L280 280 Z" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+              </svg>
+            </div>
+            <div class="book-glow"></div>
+            <div class="book-covers-stack">
+              <div class="book-card book-card-back">
+                <img src="concept-en.jpeg" alt="InHabit: Questioning Space — Édition française">
+                <span class="book-card-badge">FR</span>
+              </div>
+              <div class="book-card book-card-front">
+                <img src="concept-fr.jpeg" alt="InHabit: Questioning Space — English Edition">
+                <span class="book-card-badge">EN</span>
+              </div>
+            </div>
+            <p class="book-spec-tag" data-i18n="book_spec_tag">240 pp · 200×240 mm · Hardcover · EN/FR</p>
+          </div>
+        </div>
+
+        <div class="book-specs">
+          <article class="book-spec-card">
+            <span class="spec-num">01</span>
+            <h3 data-i18n="spec_release_label">Release</h3>
+            <p data-i18n="spec_release_value">8 june — 2026</p>
+          </article>
+          <article class="book-spec-card">
+            <span class="spec-num">02</span>
+            <h3 data-i18n="spec_publisher_label">Publisher</h3>
+            <p>InHabit </p>
+          </article>
+          <article class="book-spec-card">
+            <span class="spec-num">03</span>
+            <h3 data-i18n="spec_formats_label">Formats</h3>
+            <p data-i18n="spec_formats_value">Hardcover · Digital · Limited Edition</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="preview" class="preview section-pad section-reveal">
+      <div class="container">
+        <div class="section-heading narrow">
+          <p class="eyebrow" data-i18n="preview_eyebrow">Book Preview</p>
+          <h2 data-i18n="preview_h2">Explore selected pages before reserving your copy.</h2>
+        </div>
+        <div class="reader-shell">
+          <button class="reader-btn" type="button" data-page-action="prev" aria-label="Page precedente">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="page-viewer" role="region" aria-live="polite" aria-label="Apercu des pages du livre">
+            <div class="page-indicator"><span data-current-page>01</span> / 05</div>
+            <div class="sample-page active" data-page="1">
+              <img src="page1.png" alt="Page 1 — The threshold of habit">
+              <div class="sample-page-caption">
+                <span class="pg-num">01</span>
+                <h3 data-i18n="page1_title">+120 Architects around the world</h3>
+              </div>
+            </div>
+            <div class="sample-page" data-page="2">
+              <img src="page2.png" alt="Page 2 — Walls as memory">
+              <div class="sample-page-caption">
+                <span class="pg-num">02</span>
+                <h3 data-i18n="page2_title">Walls as memory</h3>
+              </div>
+            </div>
+            <div class="sample-page" data-page="3">
+              <img src="page3.png" alt="Page 3 — Dwelling as becoming">
+              <div class="sample-page-caption">
+                <span class="pg-num">03</span>
+                <h3 data-i18n="page3_title">Dwelling as becoming</h3>
+              </div>
+            </div>
+            <div class="sample-page" data-page="4">
+              <img src="page4.png" alt="Page 4 — The human scale">
+              <div class="sample-page-caption">
+                <span class="pg-num">04</span>
+                <h3 data-i18n="page4_title">The human scale</h3>
+              </div>
+            </div>
+            <div class="sample-page" data-page="5">
+              <img src="page5.png" alt="Page 5 — Material silence">
+              <div class="sample-page-caption">
+                <span class="pg-num">05</span>
+                <h3 data-i18n="page5_title">Material silence</h3>
+              </div>
+            </div>
+          </div>
+          <button class="reader-btn" type="button" data-page-action="next" aria-label="Page suivante">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+        <div class="reader-footer">
+          <p class="reader-hint" data-i18n="preview_hint">Use arrows to navigate pages</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="preorder" class="preorder section-pad section-reveal">
+      <div class="container">
+        <div class="preorder-layout">
+          <div class="preorder-intro">
+            <p class="eyebrow" data-i18n="preorder_eyebrow">Pre-Order</p>
+            <h2 data-i18n="preorder_h2">Reserve your copy directly from the InHabit platform.</h2>
+            <p class="lead" data-i18n="preorder_lead">Join the first readers. Limited hardcover editions with signed bookplate available upon launch.</p>
+            <ul class="preorder-perks">
+              <li data-i18n="preorder_perk1">Early access to sample chapters</li>
+              <li data-i18n="preorder_perk2">Launch event invitation</li>
+              <li data-i18n="preorder_perk3">Exclusive author note</li>
+            </ul>
+          </div>
+          <div class="preorder-cta-card">
+            <div class="preorder-cta-inner">
+              <div class="preorder-cta-badge" data-i18n="preorder_badge">Available Now</div>
+              <h3>InHabit: Questioning Space</h3>
+              <p data-i18n="preorder_cta_specs">240 pp · Hardcover · EN/FR<br>First Print — Limited Edition · Signed Bookplate</p>
+              <div class="preorder-cta-details">
+                <div class="preorder-cta-item">
+                  <span data-i18n="preorder_edition_label">Edition</span>
+                  <strong data-i18n="preorder_edition_value">First Print — Limited</strong>
+                </div>
+                <div class="preorder-cta-item">
+                  <span data-i18n="preorder_formats_label">Formats</span>
+                  <strong data-i18n="preorder_formats_value">Hardcover · Digital</strong>
+                </div>
+                <div class="preorder-cta-item">
+                  <span data-i18n="preorder_delivery_label">Delivery</span>
+                  <strong data-i18n="preorder_delivery_value">International Shipping</strong>
+                </div>
+              </div>
+              <div class="preorder-cta-link">
+                <a class="button bronze" href="https://concept-reservation.netlify.app/" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center;">
+                  <span data-i18n="preorder_btn">Reserve My Copy</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+              <p class="preorder-cta-note" data-i18n="preorder_note">Secure reservation · No payment required now</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="youtube" class="youtube section-pad section-reveal">
+      <div class="container">
+        <div class="youtube-header">
+          <div>
+            <p class="eyebrow" data-i18n="youtube_eyebrow">YouTube</p>
+            <h2 data-i18n="youtube_h2">Architecture talks &amp; spatial thinking.</h2>
+            <p class="lead"><span data-i18n="youtube_lead">Les vidéos les plus regardées de la chaîne</span> <a class="inline-link" href="https://www.youtube.com/@InHabit_Archi" target="_blank" rel="noopener noreferrer">@InHabit_Archi</a></p>
+          </div>
+          <a class="button ghost" href="https://www.youtube.com/@InHabit_Archi" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="youtube_channel_btn">Voir la chaîne</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+
+        <div class="youtube-layout">
+          <article class="yt-featured">
+            <div class="yt-embed-wrap">
+              <div class="yt-thumb" data-ytid="LMS2gV63nfI" data-title="L'Afrique s'éloigne de sa propre logique architecturale">
+                <img src="https://img.youtube.com/vi/LMS2gV63nfI/maxresdefault.jpg" alt="L'Afrique s'éloigne de sa propre logique architecturale" loading="lazy">
+                <button class="yt-play-btn" aria-label="Lire la vidéo">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="yt-meta">
+              <span class="yt-badge" data-i18n="yt1_badge">Most Popular · 31K+ views</span>
+              <h3 data-i18n="yt1_title">L'Afrique s'éloigne de sa propre logique architecturale</h3>
+              <p data-i18n="yt1_desc">Une réflexion sur l'identité spatiale africaine et la nécessité de retrouver une architecture enracinée.</p>
+            </div>
+          </article>
+
+          <div class="yt-sidebar">
+            <article class="yt-card">
+              <div class="yt-embed-wrap yt-embed-sm">
+                <div class="yt-thumb" data-ytid="2jltS_wxV_o" data-title="Le futur de l'architecture est en ASIE">
+                  <img src="https://img.youtube.com/vi/2jltS_wxV_o/maxresdefault.jpg" alt="Le futur de l'architecture est en ASIE" loading="lazy">
+                  <button class="yt-play-btn" aria-label="Lire la vidéo">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="yt-meta">
+                <span class="yt-badge" data-i18n="yt2_badge">8.9K views</span>
+                <h3 data-i18n="yt2_title">Le futur de l'architecture est en ASIE</h3>
+              </div>
+            </article>
+            <article class="yt-card">
+              <div class="yt-embed-wrap yt-embed-sm">
+                <div class="yt-thumb" data-ytid="Wsjv4sCY6xw" data-title="La solution que l'Afrique, le Japon et l'Amérique latine ont tous trouvée seuls">
+                  <img src="https://img.youtube.com/vi/Wsjv4sCY6xw/maxresdefault.jpg" alt="La solution que l'Afrique, le Japon et l'Amérique latine ont tous trouvée seuls" loading="lazy">
+                  <button class="yt-play-btn" aria-label="Lire la vidéo">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="yt-meta">
+                <span class="yt-badge" data-i18n="yt3_badge">7.3K views</span>
+                <h3 data-i18n="yt3_title">La solution que l'Afrique, le Japon et l'Amérique latine ont tous trouvée seuls</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="yt-channel-blurb">
+          <span class="yt-channel-blurb-icon" aria-hidden="true">▸</span>
+          <p data-i18n="youtube_channel_desc">InHabit_Archi explore, chaque semaine, l'architecture, la ville et la pensée spatiale à travers des vidéos courtes et accessibles — entre l'Afrique et le reste du monde.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio section-pad section-reveal">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">
+            <p class="eyebrow" data-i18n="portfolio_eyebrow">Portfolio</p>
+            <span class="section-num">02</span>
+          </div>
+          <h2 data-i18n="portfolio_h2">Selected architectural studies and spatial propositions.</h2>
+        </div>
+        <div class="filter-bar" role="tablist" aria-label="Categories de projets">
+          <button class="filter active" type="button" data-filter="all" data-i18n="filter_all">All</button>
+          <button class="filter" type="button" data-filter="residential" data-i18n="filter_residential">Residential</button>
+          <button class="filter" type="button" data-filter="commercial" data-i18n="filter_commercial">Commercial</button>
+          <button class="filter" type="button" data-filter="urban" data-i18n="filter_urban">Urban Design</button>
+          <button class="filter" type="button" data-filter="concept" data-i18n="filter_concept">Concept Projects</button>
+        </div>
+
+
+        <!-- ses projets commencent ici -->
+        <div class="project-grid">
+          <article class="project-card" data-category="residential"
+            data-img="projet1.jpg"
+            data-meta="Residential / Cotonou / 2026"
+            data-meta-fr="Résidentiel / Cotonou / 2026"
+            data-title="Ivory Courtyard House"
+            data-title-fr="Maison Cour d'Ivoire"
+            data-desc="A quiet residential composition structured by filtered light and inward gardens. The project explores the relationship between interior courtyard spaces and the play of light throughout the day."
+            data-desc-fr="Une composition résidentielle apaisée structurée par une lumière filtrée et des jardins intérieurs. Le projet explore la relation entre les espaces de cour intérieure et le jeu de la lumière au fil de la journée.">
+            <div class="project-image project-01">
+              <img src="projet1.jpg" alt="Ivory Courtyard House">
+              <div class="project-overlay">
+                <span class="project-view" data-i18n="project_view">View Project</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p data-i18n="project1_meta">Residential / Cotonou / 2026</p>
+              <h3 data-i18n="project1_title">Ivory Courtyard House</h3>
+              <span data-i18n="project1_desc">A quiet residential composition structured by filtered light and inward gardens.</span>
+            </div>
+          </article>
+          <article class="project-card" data-category="commercial"
+            data-img="projet2.jpg"
+            data-meta="Commercial / Abidjan / 2025"
+            data-meta-fr="Commercial / Abidjan / 2025"
+            data-title="Bronze Retail Pavilion"
+            data-title-fr="Pavillon Commercial Bronze"
+            data-desc="A refined commercial shell with warm material rhythm and porous frontage. Bronze-toned screens diffuse sunlight and create a distinctive presence within the urban landscape."
+            data-desc-fr="Une enveloppe commerciale raffinée avec un rythme de matériaux chaleureux et une façade poreuse. Des écrans aux tons bronze diffusent la lumière et créent une présence distinctive dans le paysage urbain.">
+            <div class="project-image project-02">
+              <img src="projet2.jpg" alt="Bronze Retail Pavilion">
+              <div class="project-overlay">
+                <span class="project-view" data-i18n="project_view">View Project</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p data-i18n="project2_meta">Commercial / Abidjan / 2025</p>
+              <h3 data-i18n="project2_title">Bronze Retail Pavilion</h3>
+              <span data-i18n="project2_desc">A refined commercial shell with warm material rhythm and porous frontage.</span>
+            </div>
+          </article>
+          <article class="project-card" data-category="urban"
+            data-img="projet3.jpg"
+            data-meta="Urban Design / Lomé / 2025"
+            data-meta-fr="Design Urbain / Lomé / 2025"
+            data-title="Linear Civic Spine"
+            data-title-fr="Colonne Civique Linéaire"
+            data-desc="A public sequence linking movement, shade, civic pause and collective life. The design prioritises the pedestrian experience through a series of covered walkways and gathering spaces."
+            data-desc-fr="Une séquence publique reliant mouvement, ombre, pause civique et vie collective. Le design privilégie l'expérience piétonne à travers une série de passages couverts et d'espaces de rassemblement.">
+            <div class="project-image project-03">
+              <img src="projet3.jpg" alt="Linear Civic Spine">
+              <div class="project-overlay">
+                <span class="project-view" data-i18n="project_view">View Project</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p data-i18n="project3_meta">Urban Design / Lome / 2025</p>
+              <h3 data-i18n="project3_title">Linear Civic Spine</h3>
+              <span data-i18n="project3_desc">A public sequence linking movement, shade, civic pause and collective life.</span>
+            </div>
+          </article>
+          <article class="project-card" data-category="concept"
+            data-img="projet4.jpg"
+            data-meta="Concept / 2026"
+            data-meta-fr="Concept / 2026"
+            data-title="House of Quiet Light"
+            data-title-fr="Maison de la Lumière Silencieuse"
+            data-desc="An experimental study on shadow, compression and the ceremonial entry. This conceptual project investigates how light can choreograph movement and emotion through architectural space."
+            data-desc-fr="Une étude expérimentale sur l'ombre, la compression et l'entrée cérémoniale. Ce projet conceptuel explore comment la lumière peut chorégraphier le mouvement et l'émotion à travers l'espace architectural.">
+            <div class="project-image project-04">
+              <img src="projet4.jpg" alt="House of Quiet Light">
+              <div class="project-overlay">
+                <span class="project-view" data-i18n="project_view">View Project</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p data-i18n="project4_meta">Concept / 2026</p>
+              <h3 data-i18n="project4_title">House of Quiet Light</h3>
+              <span data-i18n="project4_desc">An experimental study on shadow, compression and the ceremonial entry.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured section-pad section-reveal">
+      <div class="container">
+        <div class="case-study">
+          <div class="case-image-wrap">
+            <div class="case-image">
+              <img src="futur.jpg" alt="The Inward House — projet architectural">
+            </div>
+            <div class="case-tag" data-i18n="case_tag">Featured</div>
+          </div>
+          <div class="case-copy">
+            <p class="eyebrow" data-i18n="case_eyebrow">Featured Project</p>
+            <h2 data-i18n="case_h2">The Inward House</h2>
+            <p data-i18n="case_desc">
+              A case study in restraint, material calm and spatial introspection. The project uses
+              bronze-toned screens, quiet masonry and framed sky views to build a measured domestic rhythm.
+            </p>
+            <ul class="case-list">
+              <li><span data-i18n="case_l1_label">Concept</span> <span data-i18n="case_l1_value">Ritual, shade and inwardness</span></li>
+              <li><span data-i18n="case_l2_label">Materials</span> <span data-i18n="case_l2_value">Stone, timber, bronze, lime plaster</span></li>
+              <li><span data-i18n="case_l3_label">Studies</span> <span data-i18n="case_l3_value">Sketches, renderings, section diagrams</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy section-reveal" aria-label="Philosophie">
+      <div class="philosophy-inner">
+        <blockquote>
+          <span class="quote-line" data-i18n="philosophy_l1">We do not merely occupy spaces.</span>
+          <span class="quote-line quote-accent" data-i18n="philosophy_l2">We become them.</span>
+        </blockquote>
+        <div class="philosophy-rule"></div>
+      </div>
+    </section>
+
+    <section id="about" class="about section-pad section-reveal">
+      <div class="container">
+        <div class="about-grid">
+          <div class="portrait-wrap">
+
+            <!-- ici c'est l'image de la tête de warren la  -->
+            <img class="portrait" src="warrentest.jpeg" alt="Portrait de Warren Riad AYITOU, architecte et auteur">
+            <div class="portrait-accent"></div>
+          </div>
+          <div class="about-copy">
+            <p class="eyebrow" data-i18n="about_eyebrow">About The Author</p>
+            <h2>Warren Riad AYITOU</h2>
+            <p class="lead" data-i18n="about_lead">
+              Architect, author and visionary thinker, Warren Riad AYITOU develops an architectural
+              language rooted in clarity, human presence and intellectual depth.
+            </p>
+            <p data-i18n="about_p2">
+              His work approaches design as a disciplined act of listening: to context, to material,
+              to silence, and to the ways people inhabit the world.
+            </p>
+            <p class="signature">Warren Riad AYITOU</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="future section-pad section-reveal">
+      <div class="container">
+        <div class="section-heading narrow">
+          <p class="eyebrow" data-i18n="future_eyebrow">Coming Soon</p>
+          <h2 data-i18n="future_h2">Future products for designers, readers and spatial thinkers.</h2>
+        </div>
+        <div class="teaser-grid">
+          <article>
+            <div class="teaser-icon">01</div>
+            <h3 data-i18n="future1_title">Design Guides</h3>
+            <p data-i18n="future1_desc">Concise references for architectural thinking.</p>
+          </article>
+          <article>
+            <div class="teaser-icon">02</div>
+            <h3 data-i18n="future2_title">Workshops</h3>
+            <p data-i18n="future2_desc">Immersive sessions on concept, form and storytelling.</p>
+          </article>
+          <article>
+            <div class="teaser-icon">03</div>
+            <h3 data-i18n="future3_title">Masterclasses</h3>
+            <p data-i18n="future3_desc">Premium lessons for architecture and creative practice.</p>
+          </article>
+          <article>
+            <div class="teaser-icon">04</div>
+            <h3 data-i18n="future4_title">Resources</h3>
+            <p data-i18n="future4_desc">Curated tools, readings and visual references.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section-pad section-reveal">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-intro">
+            <p class="eyebrow" data-i18n="contact_eyebrow">Contact</p>
+            <h2 data-i18n="contact_h2">Start a conversation.</h2>
+            <p class="lead" data-i18n="contact_lead">For collaborations, speaking engagements, or press inquiries — reach out directly.</p>
+            <div class="social-row" aria-label="Liens sociaux">
+              <!-- IMPORTANT : quand les vraies URLs LinkedIn/Instagram seront ajoutees,
+                   ajouter target="_blank" rel="noopener noreferrer" comme sur le lien YouTube ci-dessous -->
+              <a href="#" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+                LinkedIn
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                Instagram
+              </a>
+              <a href="https://www.youtube.com/@InHabit_Archi" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.59 12 19.59 12 19.59s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.46z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+                YouTube
+              </a>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <!-- Piege anti-robot : invisible pour un humain, rempli automatiquement
+                 par la plupart des bots de spam. Si rempli, on rejette silencieusement. -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="contactWebsite">Website</label>
+              <input type="text" id="contactWebsite" name="contactWebsite" tabindex="-1" autocomplete="off">
+            </div>
+            <label><span data-i18n="form_name_label">Name</span><input type="text" name="contactName" id="contactName" required maxlength="100" placeholder="Your name" data-i18n-attr="placeholder:form_name_placeholder"></label>
+            <label><span data-i18n="form_email_label">Email</span><input type="email" name="contactEmail" id="contactEmail" required maxlength="150" placeholder="you@email.com"></label>
+            <label class="full"><span data-i18n="form_message_label">Message</span><textarea name="contactMessage" id="contactMessage" rows="5" required maxlength="2000" placeholder="Your message..." data-i18n-attr="placeholder:form_message_placeholder"></textarea></label>
+            <button class="button primary" type="submit">
+              <span data-i18n="form_submit_btn">Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p class="form-note" id="contactStatus" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h2>InHabit</h2>
+        <p>Warren Riad AYITOU</p>
+        <p class="footer-tagline" data-i18n="footer_tagline">Architect &bull; Author &bull; Creator</p>
+      </div>
+      <nav class="footer-nav" aria-label="Liens footer">
+        <a href="#book" data-i18n="nav_books">Books</a>
+        <a href="#youtube" data-i18n="nav_youtube">YouTube</a>
+        <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <form class="newsletter">
+        <label for="newsletterEmail" data-i18n="newsletter_label">Stay informed</label>
+        <div class="newsletter-row">
+          <input id="newsletterEmail" type="email" placeholder="Email address" aria-label="Email newsletter">
+          <button type="submit" data-i18n="newsletter_btn">Subscribe</button>
+        </div>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      <small data-i18n="footer_copyright">&copy; 2026 InHabit. All rights reserved.</small>
+      <nav class="footer-legal" aria-label="Liens légaux">
+        <a href="mentions-legales.html" data-i18n="footer_legal_link">Mentions légales</a>
+        <span class="footer-legal-sep" aria-hidden="true">·</span>
+        <a href="politique-confidentialite.html" data-i18n="footer_privacy_link">Politique de confidentialité</a>
+      </nav>
+      <span data-i18n="footer_crafted">Crafted with intention</span>
+    </div>
+  </footer>
+
+  <button class="back-to-home" id="backToHome" type="button" aria-label="Retour a l'accueil" data-i18n-title="back_to_home">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Project Modal -->
+  <div class="project-modal" id="projectModal" hidden aria-modal="true" role="dialog" aria-labelledby="pmTitle">
+    <div class="pm-overlay"></div>
+    <div class="pm-card">
+      <button class="pm-close" aria-label="Fermer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="pm-image">
+        <img id="pmImage" src="" alt="">
+      </div>
+      <div class="pm-details">
+        <p class="pm-meta" id="pmMeta"></p>
+        <h2 class="pm-title" id="pmTitle"></h2>
+        <p class="pm-desc" id="pmDesc"></p>
+        <span class="pm-category" id="pmCategory"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <!-- EmailJS — https://emailjs.com -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
