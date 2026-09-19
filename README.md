@@ -1,34 +1,35 @@
 # InHabit — Warren Riad AYITOU
 
-Site vitrine et portfolio personnel conçu pour présenter l'univers de **Warren Riad AYITOU**, architecte et auteur.
+A personal portfolio and showcase website created to present the work and creative universe of **Warren Riad AYITOU**, architect and author.
 
-Le projet met en avant son livre **InHabit: Questioning Space**, ses projets architecturaux, sa chaîne YouTube et son univers créatif à travers une expérience web immersive et élégante.
+The website highlights his book **InHabit: Questioning Space**, architectural projects, YouTube channel, and ideas around architecture, design, and spatial thinking through a refined and immersive web experience.
 
-## ✨ Fonctionnalités
+## Features
 
-- Présentation du livre *InHabit: Questioning Space*
-- Aperçu interactif des pages du livre
-- Système de précommande
-- Portfolio de projets architecturaux
-- Intégration de vidéos YouTube
-- Site bilingue français / anglais
-- Mode clair / sombre
-- Formulaire de contact avec EmailJS
-- Animations et interactions avancées
+- Presentation of the book *InHabit: Questioning Space*
+- Interactive book page preview
+- Book pre-order system
+- Architectural project portfolio
+- YouTube video integration
+- French and English language support
+- Light and dark mode
+- Contact form powered by EmailJS
+- Advanced animations and interactive elements
 
-## 🛠️ Technologies
+## Technologies
 
 - HTML5
 - CSS3
 - JavaScript
-- GSAP & ScrollTrigger
+- GSAP
+- ScrollTrigger
 - EmailJS
 - YouTube Embed API
 
-## 🎯 Objectif
+## Purpose
 
-Créer une identité numérique premium pour présenter le travail, les idées et les projets de Warren Riad AYITOU autour de l'architecture, du design et de la pensée spatiale.
+The goal of InHabit is to create a strong digital identity for Warren Riad AYITOU and provide a central platform for presenting his architectural work, publications, ideas, and creative projects.
 
 ---
 
-**Projet réalisé par Alfred-bit-co.**
+**Built by Alfred-bit-co.**
